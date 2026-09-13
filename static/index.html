@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EdgeFleet AI — Distributed AMR Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>EdgeFleet AI</h1>
+    <p>Decentralized Edge-AI Fleet Coordination · SIH26123 prototype</p>
+  </div>
+  <div class="actions">
+    <button onclick="resetFleet()">Reset</button>
+    <button onclick="injectBlock()">Block aisle</button>
+    <button onclick="forceConflict()">Force conflict</button>
+    <button onclick="addTask()">Add task</button>
+    <button class="primary" onclick="runBenchmark()">Benchmark</button>
+  </div>
+</header>
+
+<main>
+  <section class="metrics">
+    <div class="card"><span>Tick</span><strong id="tick">0</strong></div>
+    <div class="card"><span>Completed</span><strong id="completed">0</strong></div>
+    <div class="card"><span>Collisions</span><strong id="collisions">0</strong></div>
+    <div class="card"><span>Negotiations</span><strong id="deadlocks">0</strong></div>
+    <div class="card"><span>P2P messages</span><strong id="messages">0</strong></div>
+    <div class="card"><span>WebSocket</span><strong id="connection">connecting</strong></div>
+  </section>
+
+  <section class="workspace">
+    <div class="panel map-panel">
+      <div class="panel-title">
+        <h2>Warehouse digital twin</h2>
+        <span class="legend">● AMR &nbsp; ■ obstacle &nbsp; ◆ blocked</span>
+      </div>
+      <div id="grid" class="grid"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><h2>Fleet telemetry</h2></div>
+      <div id="robots" class="robots"></div>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="panel">
+      <div class="panel-title"><h2>Tasks</h2></div>
+      <div id="tasks"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title"><h2>Benchmark result</h2></div>
+      <pre id="benchmark">Press Benchmark to run the comparison.</pre>
+    </div>
+    <div class="panel">
+      <div class="panel-title"><h2>Event stream</h2></div>
+      <div id="events" class="events"></div>
+    </div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
