@@ -1,0 +1,11 @@
+.venv/
+.venv.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.vscode/
+*.db
+.env
+.DS_Store

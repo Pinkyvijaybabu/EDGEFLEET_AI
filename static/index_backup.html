@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EdgeFleet AI-X</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><div><h1>EdgeFleet AI-X</h1><p>Decentralized Edge-AI Fleet Coordination Laboratory</p></div><div class="actions"><label>Fleet <input id="scale" type="number" min="3" max="100" value="5"></label><button onclick="scaleFleet()">Scale</button><button onclick="resetFleet()">Reset</button><button onclick="benchmark()">Benchmark</button><button onclick="runExperiment()">Scalability Experiment</button></div></header>
+<main>
+<section class="metrics" id="metrics"></section>
+<section class="grid2"><div class="panel"><div class="panelhead"><h2>Warehouse Digital Twin</h2><span id="conn">connecting…</span></div><div id="grid" class="warehouse"></div><div class="legend">🔵 AMR &nbsp; 🟥 obstacle &nbsp; 🟨 blocked &nbsp; 🟣 isolated</div></div>
+<div class="panel"><div class="panelhead"><h2>Fleet Operations</h2><select id="robotSelect"></select></div><div class="controls"><button onclick="fault()">Kill Robot</button><button onclick="recover()">Recover Robot</button><button onclick="partition()">Disconnect Node</button><button onclick="unpartition()">Reconnect Node</button><button onclick="forceConflict()">Force Conflict</button><button onclick="blockRandom()">Block Aisle</button><button onclick="addTask()">Add Task</button><label class="range">Congestion <input id="congestion" type="range" min="0" max="1" step="0.05" value="0" oninput="setCongestion(this.value)"></label><label class="range">Packet loss <input id="loss" type="range" min="0" max="0.5" step="0.05" value="0" oninput="setLoss(this.value)"></label></div><div id="robots" class="robots"></div></div></section>
+<section class="grid3"><div class="panel"><h2>Experiment Console</h2><div id="experiment" class="console">Run the scalability experiment to compare fleet sizes from 5 to 100 robots.</div></div><div class="panel"><h2>Event Stream</h2><div id="events" class="events"></div></div><div class="panel"><h2>Architecture</h2><pre>Cloud Analytics
+      ↑
+Edge Intelligence Layer
+  ↙    ↓     ↘
+AMR ↔ AMR ↔ AMR
+  \ distributed intents /
+       ↓
+A* + local negotiation
+       ↓
+Fault recovery + rerouting</pre></div></section>
+</main><script src="/static/app.js"></script></body></html>
